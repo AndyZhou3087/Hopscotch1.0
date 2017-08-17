@@ -24,6 +24,9 @@ EventNames.EVENT_ROCKET_VIEW = "event_rocket_view"
 --复活界面
 EventNames.EVENT_REVIVE_VIEW = "event_revive_view"
 
+--打开奖励界面
+EventNames.EVENT_OPEN_REWARD = "event_open_reward"
+
 --=======================刷新功能=======================
 --刷新场景
 EventNames.EVENT_UPDATE_SCENE = "event_update_scene"
@@ -51,6 +54,9 @@ EventNames.EVENT_UPDATE_REVIVE = "event_update_revive"
 
 --开局次数刷新
 EventNames.EVENT_UPDATE_STARTROCKET = "event_update_startrocket"
+
+--视频次数刷新
+EventNames.EVENT_UPDATE_DIAMOND = "event_update_diamond"
 
 --======================游戏内场景=======================
 --迟钝药水
