@@ -10,12 +10,15 @@
 #import <VungleSDK/VungleSDK.h>
 //@import GoogleMobileAds;
 
+//NSDictionary * _dict;
+
 @interface MyUnityAdsDelegate : NSObject <VungleSDKDelegate>
 {
-    
+    VungleSDK * vungleSdk;
 }
 
-+ (IBAction)showVungleAds:(NSDictionary*)dict;
+- (void)initVungleAds;
+- (void)showVungleViedo:(NSDictionary *)dict;
 
 @end
 
