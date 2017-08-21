@@ -45,7 +45,7 @@ static int _dict;
         NSError * error;
         UIViewController * s = [[[UIApplication sharedApplication] keyWindow] rootViewController];
         NSDictionary * options = @{VunglePlayAdOptionKeyOrientations:@false};
-        [vungleSdk playAd:s withOptions:options error:&error];
+        [vungleSdk playAd:s error:&error];
     }
 }
 
