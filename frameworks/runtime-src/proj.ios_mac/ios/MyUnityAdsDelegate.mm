@@ -24,7 +24,7 @@ static int _dict;
 
 - (void)initVungleAds {
     NSError* error = nil;
-    NSString * appID = @"59950c405a43e33c6900538f";
+    NSString * appID = @"599ab10db574f31f6900852f";
     NSArray* placementIDsArray = [NSArray arrayWithObjects:kVungleTestPlacementID01, nil];
     vungleSdk = [VungleSDK sharedSDK];
 //    [vungleSdk setLoggingEnabled:YES];
