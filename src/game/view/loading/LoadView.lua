@@ -7,9 +7,9 @@ local Scheduler = require("framework.scheduler")
 
 math.randomseed(os.time())   --初始化随机种子
 
-function LoadView:ctor()
+function LoadView:ctor(parameters)
     LoadView.super.ctor(self)
-
+    
     --启用onCleanup函数
     self:setNodeEventEnabled(true)
 
@@ -150,7 +150,7 @@ function LoadView:playerResFinish()
         local fadeOut = cc.FadeOut:create(1.5)
         local callfunc = cc.CallFunc:create(function()
             self:setTouchEnabled(true)
-
+            
             --角色跑
             self:roleMove()
             --屏幕字幕闪现
@@ -200,7 +200,7 @@ function LoadView:roleMove()
         node:setPosition(cc.p(display.right+100,display.bottom+350))
     end)
     local seq2 = cc.Sequence:create(seq,callfunc)
-    local rff = cc.Repeat:create(seq2,3)
+    local rff = cc.RepeatForever:create(seq2)
     node:runAction(rff)
 end
 
