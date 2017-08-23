@@ -46,6 +46,12 @@ end
 
 function GameScene:onEnter()
 
+    --友盟调用
+    SDKUtil.umentOnEvent(SDKUtil.EventId.Role,GameDataManager.getFightRole())
+    SDKUtil.umentOnEvent(SDKUtil.EventId.Scene,GameDataManager.getFightScene())
+    SDKUtil.umentOnEventEx(SDKUtil.EventId.StartGame)
+    
+
     self.m_map = MapLayer.new()
     self:addChild(self.m_map)
 
@@ -53,10 +59,10 @@ function GameScene:onEnter()
     self:addChild(self.m_fightView,UI_ZORDER.VIEW_ZORDER)
 
     AudioManager.playGroundMusic(AudioManager.Ground_Music_Type.Fight_Bg,true)
-    if GameDataManager.isMusicOpen()==false then
+    if not GameDataManager.isMusicOpen() then
         AudioManager.stop(1)
     end
-    if GameDataManager.isSoundOpen()==false then
+    if not GameDataManager.isSoundOpen() then
         AudioManager.stop(2)
     end
 

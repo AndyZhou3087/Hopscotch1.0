@@ -51,6 +51,11 @@ function Player:ctor()
     end
     self:addBody(cc.p(0,0),p_size)
     
+    self.jumpSack = display.newSprite("ui/jumpsack.png")
+    self:addChild(self.jumpSack,0)
+    self.jumpSack:setPosition(cc.p(0,50))
+    self.jumpSack:setVisible(false)
+    
     --迟钝药水
     GameDispatcher:addListener(EventNames.EVENT_SLOWLY,handler(self,self.slowly))
     --获得1代币
@@ -65,6 +70,9 @@ function Player:ctor()
     GameDispatcher:addListener(EventNames.EVENT_START_ROCKET,handler(self,self.startRocket))
     --复活
     GameDispatcher:addListener(EventNames.EVENT_ROLE_REVIVE,handler(self,self.relive))
+    
+    --跳跃次数
+    self.jumpCount = 1
 
 end
 
@@ -115,13 +123,13 @@ end
 
 --上跳状态
 function Player:toJump(pos,isRunning)
-
+    
     self.checkPos = false
     self:toStartJump()
     local x,y = self:getPosition()
 
     local _vec = self.m_body:getVelocity()
-    self:setBodyVelocity(cc.p(_vec.x,0))
+--    self:setBodyVelocity(cc.p(_vec.x,0))
     local _scaleX=self:getScaleX()
     if _scaleX<0 then
         _vec.x=self.m_vo.m_speed
@@ -136,6 +144,9 @@ function Player:toJump(pos,isRunning)
 --        end)
         self:toStopJump()
     end)
+    
+    self.jumpCount = self.jumpCount+1
+    Tools.printDebug("--------------------------------------跳跃次数",self.jumpCount)
 
     AudioManager.playSoundEffect(AudioManager.Sound_Effect_Type.Jump_Sound)
 end
@@ -164,6 +175,8 @@ function Player:toStopJump()
     self.m_jump = false
     self.m_body:setCollisionBitmask(0x03)
     self:setGravityEnable(true)
+    local _vec = self.m_body:getVelocity()
+    self:setBodyVelocity(cc.p(_vec.x,0))
     self:stopAllActions()
     self.m_armature:stopAllActions()
     self:createModle(self.m_modle)
@@ -276,6 +289,8 @@ function Player:startRocket(parameters)
         self:getParent():toStartRocket(floor)
     end
     
+    self.jumpCount = floor
+    
     self:addBuff({type=PLAYER_STATE.StartRocket})
     self.m_armature:setVisible(false)
     self:toRocket()
@@ -323,6 +338,8 @@ function Player:springRocket(parameters)
     local roomNextType = self:getParent():getRoomByIdx(curCloseFloor+1):getCurRoomType()
     local roomType = self:getParent():getRoomByIdx(curFloor):getCurRoomType()
     self.toRocketState = 0
+    
+    self.jumpCount = curCloseFloor+10
 
     AudioManager.playSoundEffect(AudioManager.Sound_Effect_Type.Rocket_Sound,true)
     Tools.printDebug("----------brj 跳房子 火箭冲刺：",curFloor,curCloseFloor+10)
@@ -465,10 +482,12 @@ function Player:relive(parameters)
     self:setPosition(cc.p(pos.x+display.cx,pos.y))
     self:clearAllBuff()
     self:springRocket()
-    if not tolua.isnull(self.jumpSack) then
-    	self.jumpSack:removeFromParent()
-    	self.jumpSack = nil
-    end
+    
+    self.jumpSack:setVisible(false)
+--    if not tolua.isnull(self.jumpSack) then
+--    	self.jumpSack:removeFromParent()
+--    	self.jumpSack = nil
+--    end
 end
 
 --角色死亡
@@ -483,6 +502,7 @@ function Player:selfDead()
         return
     end
     
+    self.jumpSack:setVisible(true)
     self.m_body:setCollisionBitmask(0x04)
     self.m_vo.m_lifeNum = self.m_vo.m_lifeNum - 1
     Tools.printDebug("--------brj 角色死亡：",self.m_vo.m_lifeNum)
@@ -500,15 +520,13 @@ function Player:selfDead()
                     self:getParent():backOriginFunc()
                 end
                 self.m_body:setCollisionBitmask(0x03)
+                self.jumpSack:setVisible(false)
+                self.jumpCount = 1
             end)
         else
             AudioManager.playSoundEffect(AudioManager.Sound_Effect_Type.GameOver_Sound)
             self:stopAllActions()
             self.m_armature:stopAllActions()
-            
-            self.jumpSack = display.newSprite("ui/jumpsack.png")
-            self:addChild(self.jumpSack,0)
-            self.jumpSack:setPosition(cc.p(0,50))
             
             if GameDataManager.getRevive() then
                 --弹结算
@@ -523,6 +541,11 @@ end
 
 function Player:setDeadReback()
     self.m_isDead = false
+end
+
+--获取跳跃次数
+function Player:getJumpCount()
+    return self.jumpCount
 end
 
 --停止移动
@@ -659,20 +682,6 @@ function Player:isInState(_state)
         return false
     end
 end
-
---最后一点火箭飞行一会
---function Player:rocketMoveLittle()
---	local move = cc.MoveBy:create(0.4,cc.p(0,900))
---	local removeSelf = cc.RemoveSelf:create()
---	local callfunc = cc.CallFunc:create(function()
---        if self.m_armature then
---            self.m_armature:setVisible(true)
---        end
---	end)
---    local spawn = cc.Spawn:create(removeSelf,callfunc)
---    local seq = cc.Sequence:create(move,spawn)
---    self.m_rocketEffect:runAction(seq)
---end
 
 function Player:getActionVisible()
     return self.m_armature:isVisible()
