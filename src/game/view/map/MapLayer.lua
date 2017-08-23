@@ -119,7 +119,7 @@ function MapLayer:touchFunc(event)
     	return
     end
     if event.name == "began" then
-        --if (Tools.getSysTime()-lastTouchTime)>=Sequent_Click_Time then
+        if (Tools.getSysTime()-lastTouchTime)>=Sequent_Click_Time then
             if self.isMapBottom then
                 self.isMapBottom = false
                 GameDispatcher:dispatch(EventNames.EVENT_HIDE_BOTTOM)
@@ -130,7 +130,7 @@ function MapLayer:touchFunc(event)
                 Tools.printDebug("brj 是否可连击跳跃: ",self.isCollision)
                 self:toJump()
             end
-        --end
+        end
         return true
     elseif event.name == "ended" then
         lastTouchTime = Tools.getSysTime()
