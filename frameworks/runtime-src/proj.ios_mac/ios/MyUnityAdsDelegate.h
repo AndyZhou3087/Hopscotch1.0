@@ -21,6 +21,7 @@
 
 - (void)initUMAds;
 - (void)initVungleAds;
+- (void)initTapDB;
 - (void)showVungleViedo:(NSDictionary *)dict;
 - (void)umentOnEvent:(NSDictionary *)dict;
 - (void)umentOnEventEx:(NSDictionary *)dict;

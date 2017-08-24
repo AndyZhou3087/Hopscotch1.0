@@ -11,6 +11,7 @@
 #import "CCLuaBridge.h"
 #import "CCLuaEngine.h"
 
+
 MyUnityAdsDelegate * ads;
 @implementation UnityAdsMana
 
@@ -21,6 +22,8 @@ MyUnityAdsDelegate * ads;
     [ads init];
     [ads initVungleAds];
     [ads initUMAds];
+    [ads initTapDB];
+    
     NSLog(@"initVungleSdk success!");
 }
 

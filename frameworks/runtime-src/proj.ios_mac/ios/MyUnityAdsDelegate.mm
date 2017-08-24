@@ -10,7 +10,7 @@
 #import "CCLuaBridge.h"
 #import "CCLuaEngine.h"
 #import "UMMobClick/MobClick.h"
-
+#import "TyrantdbGameTracker.h"
 
 static NSString *const kVungleTestPlacementID01 = @"DEFAULT38143";
 
@@ -21,6 +21,13 @@ static int _dict;
 @end
 
 @implementation MyUnityAdsDelegate
+
+//===========TapDB==============
+- (void)initTapDB {
+    NSString * appId = @"mjg870r06sdvzvg4";
+    [TyrantdbGameTracker onStart:appId channel:nil version:nil];
+    NSLog(@"initTapDB success!");
+}
 
 
 //===========UM SDK==============

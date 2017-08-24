@@ -84,6 +84,7 @@
 		7292E7B71F4EBE0600FC4C93 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 722291531F4D871E00CEFD9D /* libz.tbd */; };
 		7292E7B91F4EBE6400FC4C93 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7292E7B81F4EBE6400FC4C93 /* Security.framework */; };
 		7292E7BC1F4EC3A100FC4C93 /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7292E7BB1F4EC3A100FC4C93 /* UMMobClick.framework */; };
+		7292E7BF1F4ED38000FC4C93 /* libTyrantdbGameTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7292E7BD1F4ED38000FC4C93 /* libTyrantdbGameTracker.a */; };
 		9F598A0819F5F3A6006015D6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F598A0719F5F3A6006015D6 /* SystemConfiguration.framework */; };
 		9F598A0B19F5F4F4006015D6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F598A0A19F5F4F4006015D6 /* StoreKit.framework */; };
 		9F9106B419F5614900AD5CAB /* libbase64.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F9105AC19F5614800AD5CAB /* libbase64.c */; };
@@ -383,6 +384,8 @@
 		7292E7B51F4EBDE100FC4C93 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		7292E7B81F4EBE6400FC4C93 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		7292E7BB1F4EC3A100FC4C93 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
+		7292E7BD1F4ED38000FC4C93 /* libTyrantdbGameTracker.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTyrantdbGameTracker.a; sourceTree = "<group>"; };
+		7292E7BE1F4ED38000FC4C93 /* TyrantdbGameTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyrantdbGameTracker.h; sourceTree = "<group>"; };
 		9F598A0719F5F3A6006015D6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		9F598A0A19F5F4F4006015D6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		9F9105A719F5614800AD5CAB /* HelperFunc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelperFunc.cpp; sourceTree = "<group>"; };
@@ -659,6 +662,7 @@
 				D6B061351803AC000077942B /* CoreMotion.framework in Frameworks */,
 				7292E7BC1F4EC3A100FC4C93 /* UMMobClick.framework in Frameworks */,
 				1AF4C403178663F200122817 /* libz.dylib in Frameworks */,
+				7292E7BF1F4ED38000FC4C93 /* libTyrantdbGameTracker.a in Frameworks */,
 				50805AAF17EBBEAA004CFAD3 /* UIKit.framework in Frameworks */,
 				5023817A17EBBE8300990C9B /* OpenGLES.framework in Frameworks */,
 				F293B3CD15EB7BE500256477 /* QuartzCore.framework in Frameworks */,
@@ -1317,6 +1321,8 @@
 		F293BB7C15EB830F00256477 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7292E7BD1F4ED38000FC4C93 /* libTyrantdbGameTracker.a */,
+				7292E7BE1F4ED38000FC4C93 /* TyrantdbGameTracker.h */,
 				722291351F4D83BE00CEFD9D /* MyUnityAdsDelegate.h */,
 				722291361F4D83BE00CEFD9D /* MyUnityAdsDelegate.mm */,
 				722291371F4D83BE00CEFD9D /* UnityAdsMana.h */,
@@ -1873,7 +1879,7 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)";
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1907,7 +1913,7 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)";
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
