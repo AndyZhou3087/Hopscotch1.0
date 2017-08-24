@@ -15,6 +15,8 @@
 
 + (void)initVungleSdk:(NSDictionary*)dict;
 + (IBAction)showVungleAds:(NSDictionary*)dict;
++ (IBAction)umentOnEvent:(NSDictionary*)dict;
++ (IBAction)umentOnEventEx:(NSDictionary*)dict;
 
 @end
 

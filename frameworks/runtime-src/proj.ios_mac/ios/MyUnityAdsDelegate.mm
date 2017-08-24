@@ -9,6 +9,7 @@
 #import "MyUnityAdsDelegate.h"
 #import "CCLuaBridge.h"
 #import "CCLuaEngine.h"
+#import "UMMobClick/MobClick.h"
 
 
 static NSString *const kVungleTestPlacementID01 = @"DEFAULT38143";
@@ -22,6 +23,39 @@ static int _dict;
 @implementation MyUnityAdsDelegate
 
 
+//===========UM SDK==============
+- (void)initUMAds {
+    UMConfigInstance.appKey = @"599e832e2ae85b19b1001a82";
+    UMConfigInstance.channelId = @"App Store";
+    UMConfigInstance.eSType = E_UM_GAME; // 仅适用于游戏场景，应用统计不用设置
+    [MobClick startWithConfigure:UMConfigInstance];
+    NSLog(@"initUMSdk success!");
+}
+
+- (void)umentOnEvent:(NSDictionary *)dict {
+    NSString * eventId;
+    NSString * rid;
+    for(NSString * key in [dict allKeys]) {
+        NSLog(@"UM event ------%@ : %@", key, [[dict objectForKey:key] description]);
+        if ([key  isEqual: @"eventId"]) {
+            eventId = [[dict objectForKey:key] description];
+        }
+        if ([key  isEqual: @"id"]) {
+            rid = [[dict objectForKey:key] description];
+        }
+    }
+    
+    [MobClick event:eventId label:rid];
+    
+}
+
+- (void)umentOnEventEx:(NSDictionary *)dict{
+    NSString * eventId = [[dict objectForKey:@"eventId"] description];
+    NSLog(@"UM event ------eventId : %@", eventId);
+    [MobClick event:eventId];
+}
+
+//===========Vungle Sdk===========
 - (void)initVungleAds {
     NSError* error = nil;
     NSString * appID = @"599ab10db574f31f6900852f";

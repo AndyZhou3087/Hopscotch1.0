@@ -79,6 +79,11 @@
 		722291561F4D873A00CEFD9D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 722291551F4D873A00CEFD9D /* libsqlite3.tbd */; };
 		722291581F4D876200CEFD9D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 722291571F4D876200CEFD9D /* WebKit.framework */; };
 		7222915A1F4D8A2E00CEFD9D /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 722291591F4D8A2E00CEFD9D /* GameController.framework */; };
+		7292E7B41F4EBDB400FC4C93 /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7292E7B31F4EBDB400FC4C93 /* UMMobClick.framework */; };
+		7292E7B61F4EBDE100FC4C93 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7292E7B51F4EBDE100FC4C93 /* CoreTelephony.framework */; };
+		7292E7B71F4EBE0600FC4C93 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 722291531F4D871E00CEFD9D /* libz.tbd */; };
+		7292E7B91F4EBE6400FC4C93 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7292E7B81F4EBE6400FC4C93 /* Security.framework */; };
+		7292E7BC1F4EC3A100FC4C93 /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7292E7BB1F4EC3A100FC4C93 /* UMMobClick.framework */; };
 		9F598A0819F5F3A6006015D6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F598A0719F5F3A6006015D6 /* SystemConfiguration.framework */; };
 		9F598A0B19F5F4F4006015D6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F598A0A19F5F4F4006015D6 /* StoreKit.framework */; };
 		9F9106B419F5614900AD5CAB /* libbase64.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F9105AC19F5614800AD5CAB /* libbase64.c */; };
@@ -374,6 +379,10 @@
 		722291551F4D873A00CEFD9D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libsqlite3.tbd; sourceTree = DEVELOPER_DIR; };
 		722291571F4D876200CEFD9D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		722291591F4D8A2E00CEFD9D /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
+		7292E7B31F4EBDB400FC4C93 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UMMobClick.framework; path = "../../../../../Downloads/UMCocos2dxAnalytics_noidfa_4.7.0/ios-noidfa/UMMobClick.framework"; sourceTree = "<group>"; };
+		7292E7B51F4EBDE100FC4C93 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
+		7292E7B81F4EBE6400FC4C93 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		7292E7BB1F4EC3A100FC4C93 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
 		9F598A0719F5F3A6006015D6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		9F598A0A19F5F4F4006015D6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		9F9105A719F5614800AD5CAB /* HelperFunc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelperFunc.cpp; sourceTree = "<group>"; };
@@ -630,6 +639,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7292E7B91F4EBE6400FC4C93 /* Security.framework in Frameworks */,
+				7292E7B71F4EBE0600FC4C93 /* libz.tbd in Frameworks */,
+				7292E7B61F4EBDE100FC4C93 /* CoreTelephony.framework in Frameworks */,
+				7292E7B41F4EBDB400FC4C93 /* UMMobClick.framework in Frameworks */,
 				7222915A1F4D8A2E00CEFD9D /* GameController.framework in Frameworks */,
 				722291581F4D876200CEFD9D /* WebKit.framework in Frameworks */,
 				722291561F4D873A00CEFD9D /* libsqlite3.tbd in Frameworks */,
@@ -644,6 +657,7 @@
 				15427CD3198F221400DC375D /* libcocos2d iOS.a in Frameworks */,
 				3EEEDB61197107C0006A9FF8 /* MediaPlayer.framework in Frameworks */,
 				D6B061351803AC000077942B /* CoreMotion.framework in Frameworks */,
+				7292E7BC1F4EC3A100FC4C93 /* UMMobClick.framework in Frameworks */,
 				1AF4C403178663F200122817 /* libz.dylib in Frameworks */,
 				50805AAF17EBBEAA004CFAD3 /* UIKit.framework in Frameworks */,
 				5023817A17EBBE8300990C9B /* OpenGLES.framework in Frameworks */,
@@ -1261,6 +1275,10 @@
 		F293B3CB15EB7BE500256477 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7292E7BB1F4EC3A100FC4C93 /* UMMobClick.framework */,
+				7292E7B81F4EBE6400FC4C93 /* Security.framework */,
+				7292E7B51F4EBDE100FC4C93 /* CoreTelephony.framework */,
+				7292E7B31F4EBDB400FC4C93 /* UMMobClick.framework */,
 				722291591F4D8A2E00CEFD9D /* GameController.framework */,
 				722291571F4D876200CEFD9D /* WebKit.framework */,
 				722291551F4D873A00CEFD9D /* libsqlite3.tbd */,
@@ -1840,6 +1858,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/VungleSDK.embeddedframework",
+					"$(PROJECT_DIR)",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1874,6 +1893,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/VungleSDK.embeddedframework",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ios/Prefix.pch;

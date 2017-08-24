@@ -20,6 +20,7 @@ MyUnityAdsDelegate * ads;
     ads = [MyUnityAdsDelegate alloc];
     [ads init];
     [ads initVungleAds];
+    [ads initUMAds];
     NSLog(@"initVungleSdk success!");
 }
 
@@ -28,6 +29,16 @@ MyUnityAdsDelegate * ads;
         NSLog(@"ViewInfo Dictionary:oooooooooooo");
     [ads showVungleViedo:dict];
     
+}
+
++ (IBAction)umentOnEvent:(NSDictionary*)dict{
+    NSLog(@"umentOnEvent:111111111");
+    [ads umentOnEvent:dict];
+}
+
++ (IBAction)umentOnEventEx:(NSDictionary*)dict{
+    NSLog(@"umentOnEventEXXXXXXX:222222");
+    [ads umentOnEventEx:dict];
 }
 
 @end

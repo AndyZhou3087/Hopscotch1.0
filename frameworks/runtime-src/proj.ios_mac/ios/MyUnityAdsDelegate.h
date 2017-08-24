@@ -15,10 +15,15 @@
 @interface MyUnityAdsDelegate : NSObject <VungleSDKDelegate>
 {
     VungleSDK * vungleSdk;
+//    NSString * appKey;
+//    NSString * ChannelId;
 }
 
+- (void)initUMAds;
 - (void)initVungleAds;
 - (void)showVungleViedo:(NSDictionary *)dict;
+- (void)umentOnEvent:(NSDictionary *)dict;
+- (void)umentOnEventEx:(NSDictionary *)dict;
 
 @end
 
