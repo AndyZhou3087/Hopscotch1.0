@@ -1168,7 +1168,6 @@ function MapLayer:collisionBeginCallBack(parameters)
                         player:setScaleX(-math.abs(_scaleX))
                     end
                     if obstacleTag==ELEMENT_TAG.SPECIAL_TAG then
-                        print("----------brj 碰撞检测------------: ",obstacleTag)
                         if not tolua.isnull(obstacle) then
                             obstacle:collision()
                         end
@@ -1845,6 +1844,7 @@ function MapLayer:backOriginFunc()
             local spBodyArr = self.specialBody[2][var]
             local move = cc.MoveTo:create(0.2,spBodyArr[2])
             spBodyArr[1]:runAction(move)
+            spBodyArr[1]:resetPosCount()
             if not tolua.isnull(spBodyArr[1].lineSprite) then
                 local scale = 8.5-(spBodyArr[3]-1)
                 local scaleX = spBodyArr[1].lineSprite:getScaleX()
