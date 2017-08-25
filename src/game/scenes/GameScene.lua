@@ -61,7 +61,7 @@ function GameScene:onEnter()
     self:addChild(self.m_fightView,UI_ZORDER.VIEW_ZORDER)
     
     local loadingView = LoadingView.new({method = 1})
-    self:addChild(loadingView)
+    self:addChild(loadingView,UI_ZORDER.VIEW_ZORDER)
     self.loadingHandler = Tools.delayCallFunc(0.1,function()
         loadingView:removeFromParent()
     end)
@@ -101,7 +101,7 @@ function GameScene:onCleanup()
     end
     
     if self.loadingHandler then
-        Scheduler.unscheduleGlobal(self.loadingHandler)
+        scheduler.unscheduleGlobal(self.loadingHandler)
         self.loadingHandler=nil
     end
 
