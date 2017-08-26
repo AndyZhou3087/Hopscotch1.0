@@ -85,6 +85,9 @@
 		7292E7B91F4EBE6400FC4C93 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7292E7B81F4EBE6400FC4C93 /* Security.framework */; };
 		7292E7BC1F4EC3A100FC4C93 /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7292E7BB1F4EC3A100FC4C93 /* UMMobClick.framework */; };
 		7292E7BF1F4ED38000FC4C93 /* libTyrantdbGameTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7292E7BD1F4ED38000FC4C93 /* libTyrantdbGameTracker.a */; };
+		72B932181F518CF300BA46F9 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B932171F518CF300BA46F9 /* Default-Landscape~ipad.png */; };
+		72B9321B1F518E2000BA46F9 /* Icon-180.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B932191F518E2000BA46F9 /* Icon-180.png */; };
+		72B9321C1F518E2000BA46F9 /* Icon-87.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B9321A1F518E2000BA46F9 /* Icon-87.png */; };
 		9F598A0819F5F3A6006015D6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F598A0719F5F3A6006015D6 /* SystemConfiguration.framework */; };
 		9F598A0B19F5F4F4006015D6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F598A0A19F5F4F4006015D6 /* StoreKit.framework */; };
 		9F9106B419F5614900AD5CAB /* libbase64.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F9105AC19F5614800AD5CAB /* libbase64.c */; };
@@ -386,6 +389,9 @@
 		7292E7BB1F4EC3A100FC4C93 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
 		7292E7BD1F4ED38000FC4C93 /* libTyrantdbGameTracker.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTyrantdbGameTracker.a; sourceTree = "<group>"; };
 		7292E7BE1F4ED38000FC4C93 /* TyrantdbGameTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyrantdbGameTracker.h; sourceTree = "<group>"; };
+		72B932171F518CF300BA46F9 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		72B932191F518E2000BA46F9 /* Icon-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-180.png"; sourceTree = "<group>"; };
+		72B9321A1F518E2000BA46F9 /* Icon-87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-87.png"; sourceTree = "<group>"; };
 		9F598A0719F5F3A6006015D6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		9F598A0A19F5F4F4006015D6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		9F9105A719F5614800AD5CAB /* HelperFunc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelperFunc.cpp; sourceTree = "<group>"; };
@@ -722,6 +728,7 @@
 		5023810617EBBCAC00990C9B /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				72B932171F518CF300BA46F9 /* Default-Landscape~ipad.png */,
 				521A8E6E19F0C3D200D177D7 /* Default-667h@2x.png */,
 				521A8E6F19F0C3D200D177D7 /* Default-736h@3x.png */,
 				5023810717EBBCAC00990C9B /* AppController.h */,
@@ -759,6 +766,8 @@
 		5091734A17ECE18300D62437 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				72B932191F518E2000BA46F9 /* Icon-180.png */,
+				72B9321A1F518E2000BA46F9 /* Icon-87.png */,
 				5091733017ECE17A00D62437 /* Icon-29.png */,
 				5091733117ECE17A00D62437 /* Icon-40.png */,
 				5091733217ECE17A00D62437 /* Icon-50.png */,
@@ -1498,8 +1507,10 @@
 				722291461F4D84A800CEFD9D /* vg_cta.png in Resources */,
 				5023812017EBBCAC00990C9B /* Icon-57.png in Resources */,
 				521A8E7019F0C3D200D177D7 /* Default-667h@2x.png in Resources */,
+				72B932181F518CF300BA46F9 /* Default-Landscape~ipad.png in Resources */,
 				C03781B918BF655400FE4F13 /* res in Resources */,
 				5023812217EBBCAC00990C9B /* Icon-76.png in Resources */,
+				72B9321B1F518E2000BA46F9 /* Icon-180.png in Resources */,
 				5091733A17ECE17A00D62437 /* Icon-80.png in Resources */,
 				5091733717ECE17A00D62437 /* Icon-40.png in Resources */,
 				722291441F4D84A800CEFD9D /* __vungle.db in Resources */,
@@ -1511,6 +1522,7 @@
 				5023812117EBBCAC00990C9B /* Icon-72.png in Resources */,
 				C05D1C121923449100B808A4 /* config.json in Resources */,
 				521A8E7119F0C3D200D177D7 /* Default-736h@3x.png in Resources */,
+				72B9321C1F518E2000BA46F9 /* Icon-87.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1881,6 +1893,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kuxx.hopscotch;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d-x/cocos/platform/ios $(SRCROOT)/../../cocos2d-x/external/curl/include/ios";
@@ -1915,6 +1928,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kuxx.hopscotch;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d-x/cocos/platform/ios";
