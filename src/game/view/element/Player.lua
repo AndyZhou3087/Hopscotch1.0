@@ -123,6 +123,7 @@ end
 
 --上跳状态
 function Player:toJump(pos,isRunning)
+    self.curFloorPos = pos
     
     self.checkPos = false
     self:setPositionY(pos.y+self.m_size.height*0.5+self.errorValue)
@@ -140,7 +141,7 @@ function Player:toJump(pos,isRunning)
     end
 --    if not self.jumpPro then
         self:setBodyVelocity(cc.p(_vec.x,260))
-        self.jumpHandler = Tools.delayCallFunc(0.22,function()
+        self.jumpHandler = Tools.delayCallFunc(RoleJumpCameraMoveTime,function()
             --        self.checkHandler = Tools.delayCallFunc(0.01,function()
             --            self:setPositionY(pos.y+self.m_size.height*0.5+self.errorValue)
             self.checkPos = true
@@ -219,6 +220,10 @@ function Player:update(dt,_x,_y)
         _vec.x=-self.m_speed
     end
     self:setBodyVelocity(_vec)
+    
+--    if self.m_jump then
+--    	self.curFloorPos
+--    end
 
 end
 
@@ -311,7 +316,6 @@ function Player:startRocket(parameters)
     self.m_armature:setVisible(false)
     self:toRocket()
     self:toStartRocket()
---    self:toStartRocket()
     
     --火箭特效
     self:rocketEffect()
