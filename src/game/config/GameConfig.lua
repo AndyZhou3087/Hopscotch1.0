@@ -9,7 +9,7 @@ PrintDebug = true
 OPACITY=160
 
 --初始钻石
-InitDiamond = 200000
+InitDiamond = 20
 
 --获取礼物花费钻石的数量
 DiamondSpendReward = 100
@@ -89,10 +89,10 @@ Map_Grade =
 MAP_SPEED = 
 {
     floor_D = 120,  --角色初始速度
-    floor_C = 120,
-    floor_B = 120,
-    floor_A = 120,
-    floor_S = 120,
+    floor_C = 130,
+    floor_B = 130,
+    floor_A = 140,
+    floor_S = 150,
 }
 
 --封闭房间停顿时间
