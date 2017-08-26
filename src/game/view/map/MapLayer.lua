@@ -124,9 +124,9 @@ function MapLayer:touchFunc(event)
                 self.isMapBottom = false
                 GameDispatcher:dispatch(EventNames.EVENT_HIDE_BOTTOM)
             end
+            Tools.printDebug("brj 是否可连击跳跃: ",self.isCollision)
             if self.isCollision then
                 self.isCollision = false
-                Tools.printDebug("brj 是否可连击跳跃: ",self.isCollision)
                 self:toJump()
             end
         --end
