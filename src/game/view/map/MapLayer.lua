@@ -18,7 +18,7 @@ local moveSpeed = 120
 --角色横跑第一层的理想化x坐标
 local runFirstX = 418
 
-local p_y = 0
+local p_y = -20
 
 math.randomseed(os.time())   --初始化随机种子
 
@@ -1026,7 +1026,8 @@ function MapLayer:onEnterFrame(dt)
 --                self:CoreLogic()
 --            end
 --        else
-            self:CoreLogic() 
+--        Tools.printDebug("------------镜头角色移动跳动---------：")
+            self:CoreLogic()
 --        end
     end
     
@@ -1316,7 +1317,7 @@ function MapLayer:CoreLogic()
     local _scaleX = self.m_player:getScaleX()
     local bpx,bpy = self.m_player:getPosition()
     local cmx,cmy = self.m_camera:getPosition()
-    local roomIndex = math.ceil((bpy-self.bottomHeight-_size.height*0.5-10)/Room_Size.height)
+    local roomIndex = math.ceil((bpy-self.bottomHeight-self.m_heightValue-p_y)/Room_Size.height)
 
     if self.m_lastRoomIdx ~= roomIndex then
         local _room
