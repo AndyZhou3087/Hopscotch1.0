@@ -2,3 +2,5 @@
 frameworks/cocos2d-x
 frameworks/runtime-src/proj.win32
 runtime
+src/game
+src/launcher
