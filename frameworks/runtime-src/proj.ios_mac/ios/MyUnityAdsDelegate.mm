@@ -127,6 +127,51 @@ static int _dict;
     //This method can be used to resume animations, sound, etc. if a user was presented a product sheet earlier
 }
 
+//五星好评
+- (void)favourableComment{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=1243387739"]];
+}
+
+//好评弹框
+- (void)favourableCommentAlert:(NSDictionary *)dict{
+    int value =(int)[[dict objectForKey:@"callback"] intValue];
+    
+    UIViewController * s = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"帮个忙吧！" message:@"给个好评吧！" preferredStyle:UIAlertControllerStyleAlert];
+    alert.popoverPresentationController.barButtonItem = s.navigationItem.leftBarButtonItem;
+    UIAlertAction * ac = [UIAlertAction actionWithTitle:@"好说好说" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=1243387739"]];
+        
+//        [self commentCompleted:value];
+    }];
+    //[ac setValue:[UIColor greenColor] forKey:@"_titleTextColor"];
+    [alert addAction:ac];
+    [alert addAction:[UIAlertAction actionWithTitle:@"下次再说" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+//        [self commentCompleted:value];
+        
+    }]];
+    UIAlertAction * ac3 = [UIAlertAction actionWithTitle:@"残忍拒绝" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    [alert addAction:ac3];
+    if ( [[UIDevice currentDevice].systemVersion floatValue] >= 8.3)
+        [ac3 setValue:[UIColor grayColor] forKey:@"_titleTextColor"];
+    [s presentViewController:alert animated:YES completion:nil];
+}
+
+
+- (void)commentCompleted:(int)handlerID {
+    NSLog(@"lua call ocFounction commentCompleted succeed");
+
+    cocos2d::LuaBridge::pushLuaFunctionById(handlerID); //压入需要调用的方法id
+    cocos2d::LuaStack *stack = cocos2d::LuaBridge::getStack();  //获取lua栈
+    stack->pushString("Comment");  //将需要传递给lua层的参数通过栈传递
+    stack->executeFunction(1);  //共有1个参数 (“oc传递给lua的参数”)，这里传参数 1
+    cocos2d::LuaBridge::releaseLuaFunctionById(handlerID); //最后记得释放
+}
+
+
 /*adsWhereRevive = 0,
 adsSuccess,1
 adsRemoveAds,2

@@ -17,6 +17,8 @@
 + (IBAction)showVungleAds:(NSDictionary*)dict;
 + (IBAction)umentOnEvent:(NSDictionary*)dict;
 + (IBAction)umentOnEventEx:(NSDictionary*)dict;
++ (IBAction)favourableComment:(NSDictionary*)dict;
++ (IBAction)favourableCommentAlert:(NSDictionary*)dict;
 
 @end
 
