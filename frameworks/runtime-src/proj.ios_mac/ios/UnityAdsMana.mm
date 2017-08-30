@@ -44,4 +44,16 @@ MyUnityAdsDelegate * ads;
     [ads umentOnEventEx:dict];
 }
 
++ (IBAction)favourableComment:(NSDictionary*)dict{
+    NSLog(@"favourableComment:Success!");
+    [ads favourableComment];
+}
+
++ (IBAction)favourableCommentAlert:(NSDictionary*)dict{
+    NSLog(@"favourableCommentAlert:000000000");
+    [ads favourableCommentAlert:dict];
+}
+
+
+
 @end
