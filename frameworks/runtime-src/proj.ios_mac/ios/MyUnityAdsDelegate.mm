@@ -136,6 +136,8 @@ static int _dict;
 - (void)favourableCommentAlert:(NSDictionary *)dict{
     int value =(int)[[dict objectForKey:@"callback"] intValue];
     
+    NSLog(@"lua call favourableCommentAlert succeed");
+    
     UIViewController * s = [[[UIApplication sharedApplication] keyWindow] rootViewController];
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"帮个忙吧！" message:@"给个好评吧！" preferredStyle:UIAlertControllerStyleAlert];
     alert.popoverPresentationController.barButtonItem = s.navigationItem.leftBarButtonItem;
