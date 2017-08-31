@@ -138,33 +138,38 @@ static int _dict;
     
     NSLog(@"lua call favourableCommentAlert succeed");
     
-    UIViewController * s = [[UIViewController alloc] init];//[[[UIApplication sharedApplication] keyWindow] rootViewController];
-    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"帮个忙吧！" message:@"给个好评吧！" preferredStyle:UIAlertControllerStyleAlert];
-    alert.popoverPresentationController.barButtonItem = s.navigationItem.leftBarButtonItem;
-    UIAlertAction * ac = [UIAlertAction actionWithTitle:@"好说好说" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=1243387739"]];
-        
-        //[self commentCompleted:value result:@"Comment"];
-    }];
-    //[ac setValue:[UIColor greenColor] forKey:@"_titleTextColor"];
-    [alert addAction:ac];
-    [alert addAction:[UIAlertAction actionWithTitle:@"下次再说" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }]];
-    UIAlertAction * ac3 = [UIAlertAction actionWithTitle:@"残忍拒绝" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-        //[self commentCompleted:value result:@"Refuse"];
-    }];
-    [alert addAction:ac3];
-    if ( [[UIDevice currentDevice].systemVersion floatValue] >= 8.3)
-        [ac3 setValue:[UIColor grayColor] forKey:@"_titleTextColor"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=1243387739"]];
     
-    //[[[UIApplication shareApplication] keyWindow].rootViewController presentViewController:alert animated:YES completion:nil];
+    [self commentCompleted:value result:@"Comment"];
     
-    [[[UIApplication sharedApplication] keyWindow].rootViewController addChildViewController:s];
     
-    [s presentViewController:alert animated:YES completion:nil];
+//    UIViewController * s = [[UIViewController alloc] init];//[[[UIApplication sharedApplication] keyWindow] rootViewController];
+//    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"帮个忙吧！" message:@"给个好评吧！" preferredStyle:UIAlertControllerStyleAlert];
+//    alert.popoverPresentationController.barButtonItem = s.navigationItem.leftBarButtonItem;
+//    UIAlertAction * ac = [UIAlertAction actionWithTitle:@"好说好说" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=1243387739"]];
+//        
+//        [self commentCompleted:value result:@"Comment"];
+//    }];
+//    //[ac setValue:[UIColor greenColor] forKey:@"_titleTextColor"];
+//    [alert addAction:ac];
+//    [alert addAction:[UIAlertAction actionWithTitle:@"下次再说" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        
+//    }]];
+//    UIAlertAction * ac3 = [UIAlertAction actionWithTitle:@"残忍拒绝" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        
+//        //[self commentCompleted:value result:@"Refuse"];
+//    }];
+//    [alert addAction:ac3];
+//    if ( [[UIDevice currentDevice].systemVersion floatValue] >= 8.3)
+//        [ac3 setValue:[UIColor grayColor] forKey:@"_titleTextColor"];
+//    
+//    //[[[UIApplication shareApplication] keyWindow].rootViewController presentViewController:alert animated:YES completion:nil];
+//    
+//    [[[UIApplication sharedApplication] keyWindow].rootViewController addChildViewController:s];
+//    
+//    [s presentViewController:alert animated:YES completion:nil];
 }
 
 
